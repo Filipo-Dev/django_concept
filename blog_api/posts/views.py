@@ -4,12 +4,12 @@ from .permissions import IsAuthorOrReadOnly
 from .serializers import PostSerializer
 
 
-class PostList(generics.ListCreateAPIView):
+class Post_List(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
 
-class PostDetail(generics.RetrieveUpdateDestroyAPIView):
+class Post_Detail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthorOrReadOnly, )
     queryset = Post.objects.all()
     serializer_class = PostSerializer
